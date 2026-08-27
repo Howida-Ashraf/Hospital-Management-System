@@ -25,11 +25,12 @@ class Patient(Person):
 
     def add_appointment(self, appointment):
         self.appointments.append(appointment)
-
-    def display_appointments(self):
-        print(f"Appointments for {self.name}:")
-        for a in self.appointments:
-            print("-", a)
+        
+   def display_patient_appointments(self):
+    if not self.appointments:
+        print("No appointments found.")
+    for appointment in self.appointments:
+        appointment.display_appointment()
 
     def update_info(self, name=None, contact_info=None):
         if name:
@@ -38,7 +39,7 @@ class Patient(Person):
             self.contact_info = contact_info
 
 
-def register_patient(patients_list, patient):
+ def register_patient(patients_list, patient):
     patients_list.append(patient)
     print(f"Patient {patient.name} registered successfully")
 
