@@ -12,15 +12,24 @@ class Person:
 class Patient(Person):
     def __init__(self, patient_id, name, age, contact_info, medical_history=""):
         if name == "":
-            print("Invalid name, patient not created properly")
+            print(" patient not created ")
 
         super().__init__(patient_id, name, age, contact_info)
         self.medical_history = medical_history
+        self.appointments = []          
 
     def display_info(self):
         print("Patient Information")
         super().display_info()
         print(f"Medical History: {self.medical_history}")
+
+    def add_appointment(self, appointment):
+        self.appointments.append(appointment)
+
+    def display_appointments(self):
+        print(f"Appointments for {self.name}:")
+        for a in self.appointments:
+            print("-", a)
 
     def update_info(self, name=None, contact_info=None):
         if name:
