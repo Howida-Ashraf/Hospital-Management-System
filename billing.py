@@ -1,7 +1,7 @@
 from datetime import datetime
 
 class Bill:
-    _id_counter = 1  # auto-increment bill_id
+    _id_counter = 1  
 
     def __init__(self, patient, appointment=None, services=None):
         self.bill_id = Bill._id_counter
