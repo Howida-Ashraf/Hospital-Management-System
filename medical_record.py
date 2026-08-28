@@ -1,6 +1,6 @@
 
 from models import Patient
-from appointment import Appointment
+from appointments import Appointment
 from doctor_departments import Doctor, Department
 
 class MedicalRecord:
